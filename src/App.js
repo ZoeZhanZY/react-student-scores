@@ -2,7 +2,7 @@ import logo from './logo.svg';
 
 
 function App() {
-  return (<><p>Hi</p></>
+  return (<><p>Hi there</p></>
   );
 }
 
