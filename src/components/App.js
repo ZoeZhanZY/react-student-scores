@@ -5,25 +5,26 @@ function App() {
     <>
       <h1>Student Score List</h1>
       <div className="container">
-        <div className="title-row">
-          <div className="title-name">
-            <h2>Student Name</h2>
-          </div>
-          <div className="title-name">
-            <h2>Score</h2>
-          </div>
-        </div>
         <div className="filter">
-          <input placeholder="Filter name" />
+          <input placeholder="Filter student name" />
         </div>
+        <div className="row">
+          <div className="title cell">Student</div>
+          <div className="title cell">Score</div>
+        </div>
+
         <div className="list">
-          <div className="content-row">
-            <div className="content-cell">Diva</div>
-            <div className="content-cell">4.8</div>
+          <div className="row">
+            <div className="cell">Diva</div>
+            <div className="cell">4.8</div>
           </div>
-          <div className="content-row">
-            <div className="content-cell">Diva</div>
-            <div className="content-cell">4.8</div>
+          <div className="row highlighted">
+            <div className="cell">Diva</div>
+            <div className="cell ">4.8</div>
+          </div>
+          <div className="row">
+            <div className="cell">Diva</div>
+            <div className="cell">4.8</div>
           </div>
         </div>
       </div>
