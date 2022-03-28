@@ -1,57 +1,57 @@
 body {
-	background-color: azure;
-	text-align: center;
-	font-family: "Montserrat" , sans-serif;
-	 padding: 0;
+  background-color: azure;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 .container {
-	border: 1px solid green ;
-	border-radius: 3px;
-	padding: 10px 20px 10px;
-margin: 0 auto 0;
-	background-color:rgb(255, 255, 239);
-	width: 80%;
+  border: 1px solid green;
+  border-radius: 3px;
+  padding: 10px 20px 10px;
+  margin: 0 auto 0;
+  background-color: rgb(255, 255, 239);
+  width: 80%;
 }
 
 .row {
-	display: flex;
-	justify-content: space-between;
-	height: 3rem;
-	width: 90%;
-	margin: 0 auto 0;
-	border-top:1px solid green ;
+  display: flex;
+  justify-content: center;
+  height: 3rem;
+  width: 90%;
+  margin: 0 auto 0;
+  border-top: 1px solid green;
 }
 
 .cell {
-	flex-grow: 1;
-	padding-top:15px;
-	padding-bottom: 10px;
+  width: 40%;
+  padding-top: 15px;
+  padding-bottom: 10px;
 }
 
 .title {
-	font-size: 20px;
-	font-family:'Courier New', Courier, monospace;
-	color: rgb(60, 141, 85);
-	font-weight: 600;
+  font-size: 20px;
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(60, 141, 85);
+  font-weight: 600;
 }
 
 .filter {
-	margin: 10px;
+  margin: 10px;
 }
 
 input {
-	border-color: rgb(245, 247, 249);
-	border-style: solid;
-	border-radius: 3px;
-	border-width: 1px;
-	height: 2rem;
-	padding-left: 6px;
-	width: 360px;
+  border-color: rgb(245, 247, 249);
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 1px;
+  height: 2rem;
+  padding-left: 6px;
+  width: 360px;
 }
 
 .highlighted {
-	background-color: rgb(244, 254, 238);
+  background-color: rgb(244, 254, 238);
 }
