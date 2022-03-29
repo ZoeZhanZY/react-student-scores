@@ -57,3 +57,13 @@ input {
 .highlighted {
   background-color: rgb(244, 254, 238);
 }
+
+.arrow {
+	position: relative;
+	top: 6px;
+	
+}
+
+.rotate {
+	transform: rotate(180deg);
+}
