@@ -1,4 +1,6 @@
 import React from "react";
+import StudentsData from "../students.json";
+import ListItem from "./ListItem";
 
 function App() {
   return (
@@ -14,18 +16,15 @@ function App() {
         </div>
 
         <div className="list">
-          <div className="row">
-            <div className="cell">Diva</div>
-            <div className="cell">4.8</div>
-          </div>
-          <div className="row highlighted">
-            <div className="cell">Diva</div>
-            <div className="cell ">4.8</div>
-          </div>
-          <div className="row">
-            <div className="cell">Diva</div>
-            <div className="cell">4.8</div>
-          </div>
+          
+          {StudentsData.map((student) => (
+            <ListItem
+              key={student.id}
+              firstName={student.firstName}
+              lastName={student.lastName}
+              lessonScore={student.lessonScore}
+            />
+          ))}
         </div>
       </div>
     </>
