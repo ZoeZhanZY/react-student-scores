@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import StudentsData from "../students.json";
 import ListItem from "./ListItem";
 import ArrowDropDownCircleOutlinedIcon from "@mui/icons-material/ArrowDropDownCircleOutlined";
+
+const rawList = [...StudentsData];
+
 function App() {
   const [studentAsdSort, setStudentAsdSort] = useState(true);
   const [scoreAsdSort, setScoreAsdSort] = useState(true);
+  const [renderedList, setRenderedList] = useState(rawList);
+	const [filterKey, setFilterKey] = useState("");
+	
+	
   const handleStudentSort = () => {
     setStudentAsdSort(!studentAsdSort);
+    console.log({ studentAsdSort, renderedList });
     const compareName = (a, b) => {
       if (a.firstName < b.firstName) {
         return -1;
@@ -17,8 +25,10 @@ function App() {
       return 0;
     };
     studentAsdSort
-      ? StudentsData.sort(compareName)
-      : StudentsData.reverse(compareName);
+      ? renderedList.sort(compareName)
+      : renderedList.reverse(compareName);
+
+
   };
 
   const handleScoreSort = () => {
@@ -33,16 +43,35 @@ function App() {
       return 0;
     };
     scoreAsdSort
-      ? StudentsData.sort(compareScore)
-      : StudentsData.reverse(compareScore);
+      ? renderedList.sort(compareScore)
+      : renderedList.reverse(compareScore);
   };
+
+  const handleFilter = (event) => {
+    setFilterKey(event.target.value);
+  };
+
+  useEffect(() => {
+		const newList = rawList.filter((student) => {
+			const name = `${student.firstName} ${student.lastName}`.toLowerCase()
+			console.log({name});
+			return (
+      name.includes(filterKey.toLocaleLowerCase()))}
+    );
+
+    setRenderedList(newList);
+  }, [filterKey]);
 
   return (
     <>
       <h1>Student Score List</h1>
       <div className="container">
         <div className="filter">
-          <input placeholder="Filter student name" />
+          <input
+            placeholder="Filter student name"
+            value={filterKey}
+            onChange={(event) => handleFilter(event)}
+          />
         </div>
         <div className="row">
           <div className="title cell">
@@ -62,7 +91,7 @@ function App() {
         </div>
 
         <div className="list">
-          {StudentsData.map((student) => (
+          {renderedList.map((student) => (
             <ListItem
               key={student.id}
               firstName={student.firstName}
