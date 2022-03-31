@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
-import styles from './Filter.module.css'
+import styles from "./Filter.module.css";
 
 const Filter = ({ rawList, setRenderedList }) => {
-	const [filterKey, setFilterKey] = useState("");
-	const handleFilter = (event) => {
-		setFilterKey(event.target.value);
-	};
+  const [filterKey, setFilterKey] = useState("");
+  const handleFilter = (event) => {
+    setFilterKey(event.target.value);
+  };
 
-	useEffect(() => {
-		const newList = rawList.filter((student) => {
-			const name = `${student.firstName} ${student.lastName}`.toLowerCase();
-		
-			return name.includes(filterKey.toLocaleLowerCase());
-		});
+  useEffect(() => {
+    const newList = rawList.filter((student) => {
+      const name = `${student.firstName} ${student.lastName}`.toLowerCase();
 
-		setRenderedList(newList);
-	}, [filterKey, rawList, setRenderedList]);
+      return name.includes(filterKey.toLocaleLowerCase());
+    });
 
-	return (
-		<div className={`row ${styles.filter}`} >
+    setRenderedList(newList);
+  }, [filterKey, rawList, setRenderedList]);
+
+  return (
+    <div className={`${styles.filterCell}`}>
       <input
+        className={` ${styles.filter}`}
         placeholder="Filter student name"
         value={filterKey}
         onChange={(event) => handleFilter(event)}
