@@ -18,7 +18,7 @@ const Filter = ({ rawList, setRenderedList }) => {
   }, [filterKey, rawList, setRenderedList]);
 
   return (
-    <div className={`${styles.filterCell}`}>
+    <div className={`${styles['filter-cell']}`}>
       <input
         className={` ${styles.filter}`}
         placeholder="Filter student name"

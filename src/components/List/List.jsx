@@ -1,17 +1,17 @@
 import React from "react";
 
 import ListItem from "./ListItem/ListItem";
-import styles from "./List.module.css";
+
 
 const List = ({renderedList}) => {
 	return (
     <div>
-      {renderedList.map((student) => (
+      {renderedList.map(({id, firstName, lastName, lessonScore}) => (
         <ListItem
-          key={student.id}
-          firstName={student.firstName}
-          lastName={student.lastName}
-          lessonScore={student.lessonScore}
+          key={id}
+          firstName={firstName}
+          lastName={lastName}
+          lessonScore={lessonScore}
         />
       ))}
     </div>

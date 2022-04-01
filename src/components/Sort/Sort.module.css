@@ -4,6 +4,7 @@
   cursor: pointer;
   transition: opacity 2s ease-in-out;
 	color: rgb(79, 168, 84);
+
 }
 
 .arrow:hover {
